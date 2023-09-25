@@ -1,46 +1,46 @@
 ﻿using jadedleader3.FileManager;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace jadedleader3.Classes
 {
-    public class UserAccount
+    public class LecturerAccount
     {
-        private readonly IJsonFileHandler<UserAccount> _jsonFileHandler;
-        
+        private readonly IJsonFileHandler<LecturerAccount> _jsonFileHandler;
+     
 
-        public Guid Id { get;  set; }    
+        public Guid Id { get; set; }
 
-        public string Username { get; set; }   
+        public string Access { get; private set; }
 
-        public string Access { get; set; }
+        public string Username { get; set; }    
 
-        public string Password { get; set; }   
+        public string Password { get; set; }
 
         public string TimeCreated { get; set; }
 
-        public UserAccount()
+        public LecturerAccount()
         {
             
         }
 
-        public UserAccount(string username, string password, IJsonFileHandler<UserAccount> jsonFileHandler)
+        public LecturerAccount(string username, string password, IJsonFileHandler<LecturerAccount> jsonFileHandler)
         {
+            _jsonFileHandler = jsonFileHandler;
+            
+
             Id = Guid.NewGuid();
+            Access = "Lecturer";
             Username = username;
-            Access = "User";
             Password = password;
             TimeCreated = DateTime.Now.ToShortDateString();
 
-            _jsonFileHandler = jsonFileHandler;
-            
         }
 
-        //method to create a new user account and add it to the json file once it's created
         private string FilePath = "C:\\Users\\joshy\\source\\repos\\jadedleader3\\jadedleader3\\JsonFiles\\UserAccounts.json";
 
         public void CreateNewAccount(string username, string password)
@@ -52,9 +52,9 @@ namespace jadedleader3.Classes
 
                 if (!verification)
                 {
-                    List<UserAccount> userAccountList = new List<UserAccount>();
+                    List<LecturerAccount> userAccountList = new List<LecturerAccount>();
 
-                    UserAccount account = new UserAccount(username, password, _jsonFileHandler);
+                    LecturerAccount account = new LecturerAccount(username, password, _jsonFileHandler);
 
                     userAccountList.Add(account);
 
@@ -74,7 +74,7 @@ namespace jadedleader3.Classes
 
         private bool VerifyingUniqueName(string username)
         {
-            List<UserAccount> deserializedUserAccountList = _jsonFileHandler.DeserializingJsonFile(FilePath);
+            List<LecturerAccount> deserializedUserAccountList = _jsonFileHandler.DeserializingJsonFile(FilePath);
 
             if (deserializedUserAccountList == null)
             {
@@ -95,11 +95,6 @@ namespace jadedleader3.Classes
 
 
         }
-
-
-
-
-
 
 
 

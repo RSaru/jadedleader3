@@ -31,12 +31,15 @@ namespace jadedleader3
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            IJsonFileHandler jsonFileHandler = new JsonFileHandler();
+            IJsonFileHandler<UserAccount> jsonFileHandler = new JsonFileHandler<UserAccount>();
+            
 
             string UsernameText = UsernameTxt.Text;
             string PasswordText = PasswordTxt.Text;
 
             UserAccount user = new UserAccount(UsernameText, PasswordText, jsonFileHandler);
+
+            
 
             user.CreateNewAccount(UsernameText, PasswordText);
 

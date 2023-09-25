@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace jadedleader3.FileManager
 {
-    public interface IJsonFileHandler
+    public interface IJsonFileHandler<T>
     {
 
-        void AddingUserAccountToJsonFile(List<UserAccount> userAccount, string jsonFilePath);
+        void AddingUserAccountToJsonFile(List<T> userAccount, string jsonFilePath);
 
-        List<UserAccount> DeserializingJsonFile(string jsonFilePath);   
+        List<T> DeserializingJsonFile(string jsonFilePath);   
 
     }
 }

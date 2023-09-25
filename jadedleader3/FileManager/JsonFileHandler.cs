@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace jadedleader3.FileManager
 {
-    public class JsonFileHandler : IJsonFileHandler
+    public class JsonFileHandler<T> : IJsonFileHandler<T>
     {
         //a method to add new users to the json file 
-        public void AddingUserAccountToJsonFile(List<UserAccount> userAccount, string jsonFilePath)
+        public void AddingUserAccountToJsonFile(List<T> userAccount, string jsonFilePath)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace jadedleader3.FileManager
                     WriteIndented = true,
                 };
 
-                List<UserAccount> existingUserAccounts = DeserializingJsonFile(jsonFilePath);
+                List<T> existingUserAccounts = DeserializingJsonFile(jsonFilePath);
 
                 // Add the new user accounts to the existing list
                 existingUserAccounts.AddRange(userAccount);
@@ -46,13 +46,13 @@ namespace jadedleader3.FileManager
         }
 
         // a method to deserialize the current json file dependant on the path and return it as a list
-        public List<UserAccount> DeserializingJsonFile(string jsonFilePath)
+        public List<T> DeserializingJsonFile(string jsonFilePath)
         {
             try
             {
                 string jsonFileContents = File.ReadAllText(jsonFilePath);
 
-                List<UserAccount> deserializedUserAccount = JsonSerializer.Deserialize<List<UserAccount>>(jsonFileContents);
+                List<T> deserializedUserAccount = JsonSerializer.Deserialize<List<T>>(jsonFileContents);
 
                 if (deserializedUserAccount == null)
                 {
