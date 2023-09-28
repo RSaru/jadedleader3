@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:jadedleader3"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="AccountCreationPageBtn" Content="Button" HorizontalAlignment="Left" Margin="326,217,0,0" VerticalAlignment="Top" Click="AccountCreationPageBtn_Click"/>
+    <Grid Background="#FF18BED6">
+        <Button x:Name="AccountCreationPageBtn" Content="Sign up" HorizontalAlignment="Left" Margin="272,301,0,0" VerticalAlignment="Top" Click="AccountCreationPageBtn_Click" Height="35" Width="77"/>
+        <Button x:Name="btnReturnSignUp" Content="Sign in" HorizontalAlignment="Left" Margin="406,301,0,0" VerticalAlignment="Top" Height="35" Width="77"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="319,234,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="319,257,0,0" TextWrapping="Wrap" Text="Password: " VerticalAlignment="Top" Width="120"/>
+        <Label Content="Don't have an account?" HorizontalAlignment="Left" Margin="378,278,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="202" Margin="284,15,0,0" VerticalAlignment="Top" Width="194" Source="/cockring.png"/>
 
     </Grid>
 </Window>

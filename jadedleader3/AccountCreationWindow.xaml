@@ -6,10 +6,21 @@
         xmlns:local="clr-namespace:jadedleader3"
         mc:Ignorable="d"
         Title="AccountCreationWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Color x:Key="SolidColorBrushColor1">#FF16A4C8</Color>
+        <Color x:Key="SolidColorBrushColor2">#FF16A4C8</Color>
+        <Color x:Key="SolidColorBrushColor3">#FF18BED6</Color>
+    </Window.Resources>
     <Grid>
-        <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="309,106,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="309,146,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="SignupBtn" Content="Signup" HorizontalAlignment="Left" Margin="321,199,0,0" VerticalAlignment="Top" Click="SignupBtn_Click"/>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource SolidColorBrushColor3}"/>
+        </Grid.Background>
+        <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="320,215,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="136" Height="19"/>
+        <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="320,260,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="136"/>
+        <Button x:Name="SignupBtn" Content="Sign up" HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Click="SignupBtn_Click" Height="35" Width="77"/>
+        <Button x:Name="btnReturnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="406,300,0,0" VerticalAlignment="Top" Height="35" Width="77"/>
+        <Image HorizontalAlignment="Left" Height="202" Margin="293,10,0,0" VerticalAlignment="Top" Width="194" Source="/cockring.png"/>
+        <Label Content="Already have an account?" HorizontalAlignment="Left" Margin="388,278,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
