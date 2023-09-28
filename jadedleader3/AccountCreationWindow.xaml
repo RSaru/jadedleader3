@@ -1,0 +1,15 @@
+﻿<Window x:Class="jadedleader3.AccountCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jadedleader3"
+        mc:Ignorable="d"
+        Title="AccountCreationWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="309,106,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="309,146,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="SignupBtn" Content="Signup" HorizontalAlignment="Left" Margin="321,199,0,0" VerticalAlignment="Top" Click="SignupBtn_Click"/>
+
+    </Grid>
+</Window>

@@ -24,5 +24,14 @@ namespace jadedleader3
         {
             InitializeComponent();
         }
+
+        private void AccountCreationPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AccountCreationWindow accountCreationWindow = new AccountCreationWindow();
+
+            accountCreationWindow.Show();
+
+            this.Close();   
+        }
     }
 }
