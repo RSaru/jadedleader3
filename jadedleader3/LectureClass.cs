@@ -36,7 +36,7 @@ namespace jadedleader3
         {
             foreach (Lectures currentLectures in lecturesList)
             {
-                if (currentLectures.RoomNumber == lecture.RoomNumber && currentLectures.RoomNumber == lecture.RoomNumber && lecture.StartTime >= currentLectures.StartTime && lecture.EndTime <= currentLectures.EndTime)
+                if (currentLectures.RoomNumber == lecture.RoomNumber && currentLectures.RoomNumber == lecture.RoomNumber && lecture.StartTime >= currentLectures.StartTime && lecture.StartTime <= currentLectures.EndTime)
                 {
                     MessageBox.Show("This room is already reserved for another lecture at this time.");
                 }
@@ -76,7 +76,7 @@ namespace jadedleader3
         {
                 DateTime minTime = DateTime.Parse("09:00 AM");
                 DateTime maxTime = DateTime.Parse("05:00 PM");
-                return lecture.StartTime >= minTime && lecture.EndTime <= maxTime;
+                return lecture.StartTime.Hour>= minTime.Hour && lecture.EndTime.Hour <= maxTime.Hour;
         }
 
 
@@ -92,6 +92,5 @@ namespace jadedleader3
                 }
             }
         }
-
     }
 }
