@@ -12,5 +12,12 @@
     "Access": "User",
     "Password": "12634",
     "TimeCreated": "25/09/2023"
+  },
+  {
+    "Id": "5cc00053-77e8-44bd-aa51-cf2391b90258",
+    "Username": "TheBigBoss",
+    "Access": "Lecturer",
+    "Password": "ImAdmin",
+    "TimeCreated": "25/09/2023"
   }
 ]

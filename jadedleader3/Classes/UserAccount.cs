@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace jadedleader3.Classes
 {
-    public class UserAccount
+    public class UserAccount : IAccounts
     {
         private readonly IJsonFileHandler<UserAccount> _jsonFileHandler;
         
@@ -22,6 +22,8 @@ namespace jadedleader3.Classes
         public string Password { get; set; }   
 
         public string TimeCreated { get; set; }
+
+        
 
         public UserAccount()
         {
@@ -84,8 +86,8 @@ namespace jadedleader3.Classes
             foreach (var account in deserializedUserAccountList)
             {
 
-                dynamic dynamicAccount = account;
-                if (dynamicAccount.Username == username)
+                
+                if (account.Username == username)
                 {
                     return true;
                 }

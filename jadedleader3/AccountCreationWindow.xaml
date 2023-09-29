@@ -18,7 +18,7 @@
         <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="320,215,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="136" Height="19"/>
         <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="320,260,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="136"/>
         <Button x:Name="SignupBtn" Content="Sign up" HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Click="SignupBtn_Click" Height="35" Width="77"/>
-        <Button x:Name="btnReturnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="406,300,0,0" VerticalAlignment="Top" Height="35" Width="77"/>
+        <Button x:Name="btnReturnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="406,300,0,0" VerticalAlignment="Top" Height="35" Width="77" Click="btnReturnLogIn_Click"/>
         <Image HorizontalAlignment="Left" Height="202" Margin="293,10,0,0" VerticalAlignment="Top" Width="194" Source="/cockring.png"/>
         <Label Content="Already have an account?" HorizontalAlignment="Left" Margin="388,278,0,0" VerticalAlignment="Top"/>
 
