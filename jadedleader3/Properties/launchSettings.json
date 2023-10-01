@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "jadedleader3": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

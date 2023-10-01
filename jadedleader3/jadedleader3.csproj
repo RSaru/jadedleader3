@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <BaseOutputPath>bin</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,24 @@
     <Resource Include="369783cddf72499ab69d2b99ea444db4 (1)-PhotoRoom.png-PhotoRoom.png" />
     <Resource Include="369783cddf72499ab69d2b99ea444db4 (1).png" />
     <Resource Include="cockring.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="JsonFiles\LectureStorage.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -12,7 +12,8 @@ namespace jadedleader3.FileManager
 
         void AddingUserAccountToJsonFile(List<T> userAccount, string jsonFilePath);
 
-        List<T> DeserializingJsonFile(string jsonFilePath);   
+        List<T> DeserializingJsonFile(string jsonFilePath);
+        void DeleteFromJSON(string jsonFilePath, Lectures objectToBeDeleted);
 
     }
 }

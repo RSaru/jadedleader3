@@ -41,7 +41,7 @@ namespace jadedleader3.Classes
         }
 
         //method to create a new user account and add it to the json file once it's created
-        private string FilePath = "C:\\Users\\joshy\\source\\repos\\jadedleader3\\jadedleader3\\JsonFiles\\UserAccounts.json";
+        private string FilePath = Configuration.ConfigureUsers();
 
         public void CreateNewAccount(string username, string password)
         {

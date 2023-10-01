@@ -1,10 +1,26 @@
-{
-  "CourseName": "Applied Computer Science",
-  "ModuleCode": "1111",
-  "ModuleName": "Software Engineering",
-  "LecturerName": "Hueng-Min Son",
-  "RoomNumber": "69420",
-  "DayOfTheWeek": "Tuesday",
-  "StartTime": "09:00",
-  "EndTime": "12:00"
-}
+[
+  {
+    "CourseName": "Applied Computer Science",
+    "ModuleCode": "1111",
+    "ModuleName": "Software Engineering",
+    "LecturerName": "Hueng-Min Son",
+    "RoomNumber": "69420",
+    "DayOfTheWeek": [
+      "Tuesday"
+    ],
+    "StartTime": "2023-09-28T09:00:00",
+    "EndTime": "2023-09-28T12:00:00"
+  },
+  {
+    "CourseName": "Applied Computer Science",
+    "ModuleCode": "1122",
+    "ModuleName": "Software Engineering",
+    "LecturerName": "Hueng-Min Son",
+    "RoomNumber": "69421",
+    "DayOfTheWeek": [
+      "Wednesday"
+    ],
+    "StartTime": "2023-09-29T09:00:00",
+    "EndTime": "2023-09-29T12:00:00"
+  }
+]

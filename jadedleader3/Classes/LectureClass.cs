@@ -16,11 +16,18 @@ using System.Xml;
 using System.Net.Mail;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
+using System.Text.Json;
+using System.IO;
+using jadedleader3.Classes;
+using jadedleader3.FileManager;
 
 namespace jadedleader3
 {
     public class Lectures
+
     {
+        IJsonFileHandler<Lectures> _jsonFileHandler = new JsonFileHandler<Lectures>();
+
         public string? CourseName { get; set; }
         public string? ModuleCode { get; set; }
         public string? ModuleName { get; set; }
@@ -31,6 +38,8 @@ namespace jadedleader3
         public DateTime EndTime { get; set; }
 
         public List<Lectures> lecturesList;
+
+        private string LecturePath = Configuration.ConfigureLectures();
 
         public void AddLecture(Lectures lecture)
         {
@@ -79,6 +88,12 @@ namespace jadedleader3
                 return lecture.StartTime.Hour>= minTime.Hour && lecture.EndTime.Hour <= maxTime.Hour;
         }
 
+        public List<Lectures> DisplayLectures()
+        {
+            string lectureJson = File.ReadAllText(LecturePath);
+            lecturesList = JsonSerializer.Deserialize<List<Lectures>>(lectureJson);
+            return lecturesList;
+        }
 
         public void DeleteLecture(Lectures lectureToBeDeleted)
         {
@@ -87,8 +102,16 @@ namespace jadedleader3
                 MessageBoxResult check = MessageBox.Show("Are you sure you want to delete this lecture", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (check == MessageBoxResult.Yes)
                 {
-                    lecturesList.Remove(lectureToBeDeleted);
+                    //lecturesList.Remove(lectureToBeDeleted);
                     
+                    if (_jsonFileHandler != null)
+                    {
+                        _jsonFileHandler.DeleteFromJSON(LecturePath, lectureToBeDeleted);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Oops");
+                    }
                 }
             }
         }
