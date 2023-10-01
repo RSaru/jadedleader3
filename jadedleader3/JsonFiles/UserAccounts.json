@@ -1,16 +1,23 @@
 [
   {
-    "Id": "0aa83081-deb6-453c-b2f4-de76d7e5b27e",
-    "Username": "testingtester",
-    "Access": "User",
-    "Password": "1254312544",
-    "TimeCreated": "25/09/2023"
+    "Id": "1e567dc4-62df-4e47-9641-4fe7c86ca0f9",
+    "Username": "Ryan",
+    "Access": "Lecturer",
+    "Password": "123456",
+    "TimeCreated": "01/10/2023"
   },
   {
-    "Id": "5cc00053-77e8-44bd-aa51-cf2391b90259",
-    "Username": "tester",
+    "Id": "7f76ed96-66a9-4f74-b76f-e34cc0952e3d",
+    "Username": "Username:",
     "Access": "User",
-    "Password": "12634",
-    "TimeCreated": "25/09/2023"
+    "Password": "Password:",
+    "TimeCreated": "01/10/2023"
+  },
+  {
+    "Id": "7b069787-515c-4c15-a123-22cda9df1f12",
+    "Username": "testing",
+    "Access": "User",
+    "Password": "tester123",
+    "TimeCreated": "01/10/2023"
   }
 ]
