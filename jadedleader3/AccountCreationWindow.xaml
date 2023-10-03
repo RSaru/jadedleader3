@@ -11,16 +11,37 @@
         <Color x:Key="SolidColorBrushColor2">#FF16A4C8</Color>
         <Color x:Key="SolidColorBrushColor3">#FF18BED6</Color>
     </Window.Resources>
-    <Grid>
-        <Grid.Background>
-            <SolidColorBrush Color="{DynamicResource SolidColorBrushColor3}"/>
-        </Grid.Background>
-        <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="320,215,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="136" Height="19"/>
-        <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="320,260,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="136"/>
-        <Button x:Name="SignupBtn" Content="Sign up" HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Click="SignupBtn_Click" Height="35" Width="77"/>
-        <Button x:Name="btnReturnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="406,300,0,0" VerticalAlignment="Top" Height="35" Width="77"/>
-        <Image HorizontalAlignment="Left" Height="202" Margin="293,10,0,0" VerticalAlignment="Top" Width="194" Source="/cockring.png"/>
-        <Label Content="Already have an account?" HorizontalAlignment="Left" Margin="388,278,0,0" VerticalAlignment="Top"/>
+    <Grid Background="#FFCF3D3D">
+        <TextBox x:Name="UsernameTxt" Text="Username:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,217,0,0" TextAlignment="Center" Width="198" Height="25">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="PasswordTxt" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,262,0,0" TextAlignment="Center" Width="196" Height="27">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="SignupBtn" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Register" Background="#FFCF3D3D" BorderBrush="White" Foreground="White" FontFamily="Gotham Book" FontWeight="Bold" Width="196" Height="39" Click="SignupBtn_Click" Margin="0,302,0,0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="btnReturnLogIn" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Log in" Background="#FFCF3D3D" BorderBrush="White" Foreground="White" Height="39" Width="87" Margin="684,30,0,0" Click="btnReturnLogIn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Image HorizontalAlignment="Center" Height="118" Margin="0,63,0,0" VerticalAlignment="Top" Width="468" Source="/logo.jpg"/>
 
     </Grid>
 </Window>
