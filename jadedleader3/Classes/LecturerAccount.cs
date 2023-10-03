@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace jadedleader3.Classes
 {
-    public class LecturerAccount
+    public class LecturerAccount : IAccount
     {
         private readonly IJsonFileHandler<LecturerAccount> _jsonFileHandler;
      
 
         public Guid Id { get; set; }
 
-        public string Access { get; private set; }
+        public string Access { get; set; }
 
         public string Username { get; set; }    
 
@@ -41,7 +41,7 @@ namespace jadedleader3.Classes
 
         }
 
-        private string FilePath = "C:\\Users\\joshy\\source\\repos\\jadedleader3\\jadedleader3\\JsonFiles\\UserAccounts.json";
+        private string FilePath = Configuration.ConfigureUsers();
 
         public void CreateNewAccount(string username, string password)
         {
