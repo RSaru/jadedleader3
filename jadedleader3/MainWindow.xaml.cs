@@ -28,7 +28,7 @@ namespace jadedleader3
 
         public MainWindow()
         {
-
+            InitializeComponent();
         }
 
         private void AccountCreationPageBtn_Click(object sender, RoutedEventArgs e)
