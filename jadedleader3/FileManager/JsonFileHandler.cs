@@ -108,6 +108,29 @@ namespace jadedleader3.FileManager
             File.WriteAllText(jsonFilePath, updatedJsonData);
         }
 
+        public void EditLecture(Lectures objectToBeEdited,Lectures newInfo, string jsonFilePath)
+        {
+            List<Lectures> lecturesEdit = DeserializingJsonFileLecture(jsonFilePath);
+            Lectures lectureFind = lecturesEdit.FirstOrDefault(lecture => lecture.ModuleName == objectToBeEdited.ModuleName);
+            if (lectureFind != null)
+            {
+                lectureFind.CourseName = newInfo.CourseName;
+                lectureFind.ModuleCode = newInfo.ModuleCode;
+                lectureFind.ModuleName = newInfo.ModuleName;
+                lectureFind.LecturerName = newInfo.LecturerName;
+                lectureFind.RoomNumber = newInfo.RoomNumber;
+                lectureFind.DayOfTheWeek = newInfo.DayOfTheWeek;
+                lectureFind.StartTime = newInfo.StartTime;
+                lectureFind.EndTime = newInfo.EndTime;
+                string newLectureEdit = JsonSerializer.Serialize(lecturesEdit, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    WriteIndented = true,
+                });
+                File.WriteAllText(jsonFilePath, newLectureEdit);
+            }
+        }
+
         private static bool CheckEqualObjects(Lectures jsonObject, Lectures removedObject)
         {
             return jsonObject.ModuleCode == removedObject.ModuleCode && jsonObject.ModuleName == removedObject.ModuleName && jsonObject.CourseName == removedObject.CourseName && jsonObject.RoomNumber == removedObject.RoomNumber;

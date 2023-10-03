@@ -15,5 +15,7 @@ namespace jadedleader3.FileManager
         List<T> DeserializingJsonFile(string jsonFilePath);
         void DeleteFromJSON(string jsonFilePath, Lectures objectToBeDeleted);
 
+        public void EditLecture(Lectures objectToBeEdited, Lectures newInfo, string jsonFilePath);
+
     }
 }

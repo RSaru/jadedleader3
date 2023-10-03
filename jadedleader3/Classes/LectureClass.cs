@@ -49,11 +49,11 @@ namespace jadedleader3
                 {
                     MessageBox.Show("This room is already reserved for another lecture at this time.");
                 }
-                else if(VerifyLecture(lecture))
+                else if (VerifyLecture(lecture))
                 {
                     lecturesList.Add(lecture);
                     MessageBox.Show("Lecture successfully added");
-                    
+
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace jadedleader3
             {
                 return false;
             }
-            else if(VerifyTime(lecture))
+            else if (VerifyTime(lecture))
             {
                 return true;
             }
@@ -83,9 +83,9 @@ namespace jadedleader3
 
         private static bool VerifyTime(Lectures lecture)
         {
-                DateTime minTime = DateTime.Parse("09:00 AM");
-                DateTime maxTime = DateTime.Parse("05:00 PM");
-                return lecture.StartTime.Hour>= minTime.Hour && lecture.EndTime.Hour <= maxTime.Hour;
+            DateTime minTime = DateTime.Parse("09:00 AM");
+            DateTime maxTime = DateTime.Parse("05:00 PM");
+            return lecture.StartTime.Hour >= minTime.Hour && lecture.EndTime.Hour <= maxTime.Hour;
         }
 
         public List<Lectures> DisplayLectures()
@@ -102,8 +102,7 @@ namespace jadedleader3
                 MessageBoxResult check = MessageBox.Show("Are you sure you want to delete this lecture", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (check == MessageBoxResult.Yes)
                 {
-                    //lecturesList.Remove(lectureToBeDeleted);
-                    
+                    lecturesList.Remove(lectureToBeDeleted);
                     if (_jsonFileHandler != null)
                     {
                         _jsonFileHandler.DeleteFromJSON(LecturePath, lectureToBeDeleted);
@@ -112,6 +111,26 @@ namespace jadedleader3
                     {
                         MessageBox.Show("Oops");
                     }
+                }
+            }
+        }
+
+        public void EditLecture(Lectures lectureToBeEdited, Lectures newLectureInfo)
+        {
+            //if(user.PermissionCheck
+            {
+                MessageBoxResult check = MessageBox.Show("Are you sure you want to edit this lecture", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (check == MessageBoxResult.Yes)
+                {
+                    _jsonFileHandler.EditLecture(lectureToBeEdited, newLectureInfo, LecturePath);
+                    lectureToBeEdited.CourseName = newLectureInfo.CourseName;
+                    lectureToBeEdited.ModuleCode = newLectureInfo.ModuleCode;
+                    lectureToBeEdited.ModuleName = newLectureInfo.ModuleName;
+                    lectureToBeEdited.LecturerName = newLectureInfo.LecturerName;
+                    lectureToBeEdited.RoomNumber = newLectureInfo.RoomNumber;
+                    lectureToBeEdited.DayOfTheWeek = newLectureInfo.DayOfTheWeek;
+                    lectureToBeEdited.StartTime = newLectureInfo.StartTime;
+                    lectureToBeEdited.EndTime = newLectureInfo.EndTime;
                 }
             }
         }
