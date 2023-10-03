@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace jadedleader3.Classes
 {
-    public class UserAccount
+    public class UserAccount : IAccount
     {
         private readonly IJsonFileHandler<UserAccount> _jsonFileHandler;
         
