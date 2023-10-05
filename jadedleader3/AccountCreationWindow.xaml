@@ -33,7 +33,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="btnReturnLogIn" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Log in" Background="#FFCF3D3D" BorderBrush="White" Foreground="White" Height="39" Width="87" Margin="684,30,0,0" Click="btnReturnLogIn_Click">
+        <Button x:Name="btnReturnLogIn" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Log in" Background="#FFCF3D3D" BorderBrush="White" Foreground="White" Height="39" Width="87" Margin="690,22,0,0" Click="btnReturnLogIn_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -42,6 +42,8 @@
         </Button>
 
         <Image HorizontalAlignment="Center" Height="118" Margin="0,63,0,0" VerticalAlignment="Top" Width="468" Source="/logo.jpg"/>
+        <Image HorizontalAlignment="Left" Height="27" Margin="301,216,0,0" VerticalAlignment="Top" Width="33" Source="/1580919-200.png"/>
+        <Image HorizontalAlignment="Left" Height="27" Margin="302,262,0,0" VerticalAlignment="Top" Width="29" Source="/black-key-symbol-icon-6.png"/>
 
     </Grid>
 </Window>
