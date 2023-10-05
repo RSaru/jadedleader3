@@ -28,6 +28,7 @@ namespace jadedleader3
 
         public MainWindow()
         {
+            InitializeComponent();
 
         }
 

@@ -24,7 +24,6 @@ namespace jadedleader3
         public AccountCreationWindow()
         {
             InitializeComponent();
-
             
         }
 
