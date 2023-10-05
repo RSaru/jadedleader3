@@ -55,7 +55,7 @@ namespace jadedleader3.FileManager
             {
                 string jsonFileContents = File.ReadAllText(jsonFilePath);
 
-                List<T> deserializedUserAccount = JsonSerializer.Deserialize<List<T>>(jsonFileContents);
+                List<T>? deserializedUserAccount = JsonSerializer.Deserialize<List<T>>(jsonFileContents);
 
                 if (deserializedUserAccount == null)
                 {
@@ -111,7 +111,7 @@ namespace jadedleader3.FileManager
         public void EditLecture(Lectures objectToBeEdited,Lectures newInfo, string jsonFilePath)
         {
             List<Lectures> lecturesEdit = DeserializingJsonFileLecture(jsonFilePath);
-            Lectures lectureFind = lecturesEdit.FirstOrDefault(lecture => lecture.ModuleName == objectToBeEdited.ModuleName);
+            Lectures? lectureFind = lecturesEdit.FirstOrDefault(lecture => CheckEqualObjects(lecture, objectToBeEdited));
             if (lectureFind != null)
             {
                 lectureFind.CourseName = newInfo.CourseName;
@@ -131,6 +131,37 @@ namespace jadedleader3.FileManager
             }
         }
 
+        public void AddingLectureToJsonFile(List<Lectures> lectureAdd, string jsonFilePath)
+        {
+            try
+            {
+
+                JsonSerializerOptions options = new JsonSerializerOptions()
+                {
+                    PropertyNameCaseInsensitive = true,
+                    WriteIndented = true,
+                };
+
+                List<Lectures> existingLectures = DeserializingJsonFileLecture(jsonFilePath);
+
+                // Add the new user accounts to the existing list
+                existingLectures.AddRange(lectureAdd);
+
+                // Serialize the entire updated list of user accounts to JSON
+                string serializingObjectToJson = JsonSerializer.Serialize(existingLectures, options);
+
+                if (serializingObjectToJson != null)
+                {
+                    File.WriteAllText(jsonFilePath, serializingObjectToJson);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Either an invalid user account was given, or the filepath was incorrect: {ex.Message}");
+            }
+
+
+        }
         private static bool CheckEqualObjects(Lectures jsonObject, Lectures removedObject)
         {
             return jsonObject.ModuleCode == removedObject.ModuleCode && jsonObject.ModuleName == removedObject.ModuleName && jsonObject.CourseName == removedObject.CourseName && jsonObject.RoomNumber == removedObject.RoomNumber;
