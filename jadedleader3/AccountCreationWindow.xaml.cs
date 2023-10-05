@@ -52,12 +52,12 @@ namespace jadedleader3
         private void btnReturnLogIn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+
+            
             mainWindow.Show();
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                (Application.Current.MainWindow as Window)?.Close();
-            });
-            Application.Current.MainWindow = mainWindow;
+            
+            
+            this.Close();
         }
     }
 }

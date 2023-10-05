@@ -6,10 +6,35 @@
         xmlns:local="clr-namespace:jadedleader3"
         mc:Ignorable="d"
         Title="LecturerAccountCreation" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="UsernameTxt" HorizontalAlignment="Left" Margin="326,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PasswordTxt" HorizontalAlignment="Left" Margin="326,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="LecturerAccountCreationBtn" Content="Button" HorizontalAlignment="Left" Margin="433,217,0,0" VerticalAlignment="Top" Click="LecturerAccountCreationBtn_Click"/>
+    <Grid Background="#FFCF3D3D">
+        <TextBox x:Name="UsernameTxt" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,217,0,0" TextAlignment="Center" Width="198" Height="25">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox x:Name="PasswordTxt" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,261,0,0" TextAlignment="Center" Width="196" Height="27">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button x:Name="LecturerAccountCreationBtn" Content="Register" Background="#FFCF3D3D" BorderBrush="White" Foreground="White" FontFamily="Gotham Book" FontWeight="Bold" Click="LecturerAccountCreationBtn_Click" Margin="302,306,301,92">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Image HorizontalAlignment="Left" Height="27" Margin="301,216,0,0" VerticalAlignment="Top" Width="33" Source="/1580919-200.png"/>
+        <Image HorizontalAlignment="Left" Height="27" Margin="302,262,0,0" VerticalAlignment="Top" Width="29" Source="/black-key-symbol-icon-6.png"/>
+        <Image HorizontalAlignment="Left" Height="118" Margin="169,47,0,0" VerticalAlignment="Top" Width="468" Source="/logo.jpg"/>
+
 
     </Grid>
 </Window>
