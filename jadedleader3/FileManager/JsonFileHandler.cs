@@ -111,7 +111,7 @@ namespace jadedleader3.FileManager
         public void EditLecture(Lectures objectToBeEdited,Lectures newInfo, string jsonFilePath)
         {
             List<Lectures> lecturesEdit = DeserializingJsonFileLecture(jsonFilePath);
-            Lectures lectureFind = lecturesEdit.FirstOrDefault(lecture => CheckEqualObjects(lecture, objectToBeEdited));
+            Lectures? lectureFind = lecturesEdit.FirstOrDefault(lecture => CheckEqualObjects(lecture, objectToBeEdited));
             if (lectureFind != null)
             {
                 lectureFind.CourseName = newInfo.CourseName;
