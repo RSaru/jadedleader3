@@ -64,6 +64,8 @@ namespace jadedleader3
             if(login == "Lecturer")
             {
                 MessageBox.Show("Lecturer pathway");
+                TimetableView time = new TimetableView();
+                time.Show();
             }
             else if(login == "User")
             {

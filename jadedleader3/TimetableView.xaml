@@ -6,18 +6,34 @@
         xmlns:local="clr-namespace:jadedleader3"
         mc:Ignorable="d"
         Title="TimetableView" Height="900" Width="1700">
+    
+    <Window.Resources>
+    <local:DayOfWeekListConverter x:Key="DayOfWeekListConverter" />
+    </Window.Resources>
     <Grid>
-        <DataGrid x:Name="DGDisplayLectures" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="566" Margin="10,71,0,0" VerticalAlignment="Top" Width="907" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid Name="timetableDataGrid" IsReadOnly="False" ItemsSource="{Binding LectureSchedule}" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" Margin="10,174,442,174">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="9:00" Width="100" />
-                <DataGridTextColumn Header="10:00" Width="100" />
-                <DataGridTextColumn Header="11:00" Width="100" />
-                <DataGridTextColumn Header="12:00" Width="100" />
-                <DataGridTextColumn Header="13:00" Width="100" />
-                <DataGridTextColumn Header="14:00" Width="100" />
-                <DataGridTextColumn Header="15:00" Width="100" />
-                <DataGridTextColumn Header="16:00" Width="100" />
-                <DataGridTextColumn Header="17:00" Width="100" />
+                <DataGridTextColumn Header="Course Name" Binding="{Binding CourseName}" Width="150" />
+                <DataGridTextColumn Header="Module Code" Binding="{Binding ModuleCode}" Width="150" />
+                <DataGridTextColumn Header="Module Name" Binding="{Binding ModuleName}" Width="150" />
+                <DataGridTextColumn Header="Lecturer Name" Binding="{Binding LecturerName}" Width="150" />
+                <DataGridTextColumn Header="Room Number" Binding="{Binding RoomNumber}" Width="120" />
+                <DataGridTemplateColumn Header="Day of the Week" Width="175" SortMemberPath="DayOfTheWeek">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DayOfTheWeek, Converter={StaticResource DayOfWeekListConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Start Time" Binding="{Binding StartTime}" Width="150" />
+                <DataGridTextColumn Header="End Time" Binding="{Binding EndTime}" Width="150" />
+                <DataGridTemplateColumn Header="Edit" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Content="Edit" Click="btnEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Image HorizontalAlignment="Left" Height="61" Margin="10,10,0,0" VerticalAlignment="Top" Width="238" Source="/logo.jpg"/>

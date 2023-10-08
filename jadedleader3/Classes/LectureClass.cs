@@ -33,7 +33,7 @@ namespace jadedleader3
         public string? ModuleName { get; set; }
         public string? LecturerName { get; set; }
         public string? RoomNumber { get; set; }
-        public string[] DayOfTheWeek { get; set; } = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+        public List<string> DayOfTheWeek { get; set; } = new List<string>();
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 

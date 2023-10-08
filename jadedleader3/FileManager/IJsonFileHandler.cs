@@ -17,5 +17,7 @@ namespace jadedleader3.FileManager
 
         void EditLecture(Lectures objectToBeEdited, Lectures newInfo, string jsonFilePath);
 
+        List<Lectures> DeserializingJsonFileLecture(string jsonFilePath);
+
     }
 }

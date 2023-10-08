@@ -77,14 +77,14 @@ namespace jadedleader3.FileManager
             {
                 string jsonFileContents = File.ReadAllText(jsonFilePath);
 
-                List<Lectures>? deserializedUserAccount = JsonSerializer.Deserialize<List<Lectures>>(jsonFileContents);
+                List<Lectures>? deserializedLectures = JsonSerializer.Deserialize<List<Lectures>>(jsonFileContents);
 
-                if (deserializedUserAccount == null)
+                if (deserializedLectures == null)
                 {
                     throw new Exception($"File couldn't be deserialized, either the file has no contents or the file path is incorrect.");
                 }
 
-                return deserializedUserAccount;
+                return deserializedLectures;
             }
             catch (Exception ex)
             {
@@ -144,10 +144,8 @@ namespace jadedleader3.FileManager
 
                 List<Lectures> existingLectures = DeserializingJsonFileLecture(jsonFilePath);
 
-                // Add the new user accounts to the existing list
                 existingLectures.AddRange(lectureAdd);
 
-                // Serialize the entire updated list of user accounts to JSON
                 string serializingObjectToJson = JsonSerializer.Serialize(existingLectures, options);
 
                 if (serializingObjectToJson != null)
