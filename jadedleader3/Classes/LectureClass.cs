@@ -33,7 +33,7 @@ namespace jadedleader3
         public string? ModuleName { get; set; }
         public string? LecturerName { get; set; }
         public string? RoomNumber { get; set; }
-        public List<string> DayOfTheWeek { get; set; } = new List<string>();
+        public string DayOfTheWeek { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
@@ -88,51 +88,5 @@ namespace jadedleader3
             return lecture.StartTime.Hour >= minTime.Hour && lecture.EndTime.Hour <= maxTime.Hour;
         }
 
-        public List<Lectures> DisplayLectures()
-        {
-            string lectureJson = File.ReadAllText(LecturePath);
-            lecturesList = JsonSerializer.Deserialize<List<Lectures>>(lectureJson);
-            return lecturesList;
-        }
-
-        public void DeleteLecture(Lectures lectureToBeDeleted)
-        {
-            //if(user.PermissionCheck)
-            {
-                MessageBoxResult check = MessageBox.Show("Are you sure you want to delete this lecture", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (check == MessageBoxResult.Yes)
-                {
-                    lecturesList.Remove(lectureToBeDeleted);
-                    if (_jsonFileHandler != null)
-                    {
-                        _jsonFileHandler.DeleteFromJSON(LecturePath, lectureToBeDeleted);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Oops");
-                    }
-                }
-            }
-        }
-
-        public void EditLecture(Lectures lectureToBeEdited, Lectures newLectureInfo)
-        {
-            //if(user.PermissionCheck
-            {
-                MessageBoxResult check = MessageBox.Show("Are you sure you want to edit this lecture", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (check == MessageBoxResult.Yes)
-                {
-                    _jsonFileHandler.EditLecture(lectureToBeEdited, newLectureInfo, LecturePath);
-                    lectureToBeEdited.CourseName = newLectureInfo.CourseName;
-                    lectureToBeEdited.ModuleCode = newLectureInfo.ModuleCode;
-                    lectureToBeEdited.ModuleName = newLectureInfo.ModuleName;
-                    lectureToBeEdited.LecturerName = newLectureInfo.LecturerName;
-                    lectureToBeEdited.RoomNumber = newLectureInfo.RoomNumber;
-                    lectureToBeEdited.DayOfTheWeek = newLectureInfo.DayOfTheWeek;
-                    lectureToBeEdited.StartTime = newLectureInfo.StartTime;
-                    lectureToBeEdited.EndTime = newLectureInfo.EndTime;
-                }
-            }
-        }
     }
 }
