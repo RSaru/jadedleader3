@@ -49,5 +49,12 @@ namespace jadedleader3
         {
 
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            TimetableView time = new TimetableView();
+            time.Show();
+            this.Close();
+        }
     }
 }

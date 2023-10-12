@@ -43,6 +43,7 @@ namespace jadedleader3
 
         public void AddLecture(Lectures lecture, List<Lectures> lecturesList)
         {
+            List<Lectures> emptyList = new List<Lectures>();
             foreach (Lectures currentLectures in lecturesList.ToList())
             {
                 if (currentLectures.RoomNumber == lecture.RoomNumber && currentLectures.RoomNumber == lecture.RoomNumber && lecture.StartTime >= currentLectures.StartTime && lecture.StartTime <= currentLectures.EndTime)
@@ -51,9 +52,10 @@ namespace jadedleader3
                 }
                 else if (VerifyLecture(lecture))
                 {
-                    lecturesList.Add(lecture);
+                    emptyList.Add(lecture);
                     MessageBox.Show("Lecture successfully added");
-
+                    _jsonFileHandler.AddingLectureToJsonFile(emptyList, LecturePath);
+                    break;
                 }
                 else
                 {
@@ -61,7 +63,7 @@ namespace jadedleader3
                 }
             }
 
-            _jsonFileHandler.AddingLectureToJsonFile(lecturesList, LecturePath);
+            
 
         }
 

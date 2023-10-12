@@ -150,5 +150,6 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button x:Name="btnAdd"  Content="Add Lecture" HorizontalAlignment="Left" Height="82" Margin="60,97,0,0" VerticalAlignment="Top" Width="229" Click="btnAdd_Click"/>
     </Grid>
 </Window>

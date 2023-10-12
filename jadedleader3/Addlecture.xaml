@@ -23,14 +23,21 @@
         <TextBox x:Name="txtLecName" HorizontalAlignment="Left" Height="35" Margin="268,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="txtModName" HorizontalAlignment="Left" Height="35" Margin="268,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="txtModCode" HorizontalAlignment="Left" Height="35" Margin="268,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="btnAdd" Content="Add Lecture" HorizontalAlignment="Left" Height="80" Margin="326,327,0,0" VerticalAlignment="Top" Width="211" Click="btnAdd_Click" Background="#FFCF3D3D" Foreground="White" BorderBrush="White">
+        <Button x:Name="btnAdd" Content="Add Lecture" HorizontalAlignment="Left" Height="80" Margin="454,331,0,0" VerticalAlignment="Top" Width="211" Click="btnAdd_Click" Background="#FFCF3D3D" Foreground="White" BorderBrush="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Margin="225,24,150,312" Source="/logo.jpg" Stretch="Fill"/>
+        <Image Margin="210,24,165,312" Source="/logo.jpg" Stretch="Fill"/>
+        <Button x:Name="btnBack" Content="Return" HorizontalAlignment="Left" Height="80" Margin="198,331,0,0" VerticalAlignment="Top" Width="202" Click="btnBack_Click" Background="#FFCF3D3D" BorderBrush="White" Foreground="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>
