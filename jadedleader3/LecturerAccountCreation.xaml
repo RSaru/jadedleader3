@@ -34,6 +34,13 @@
         <Image HorizontalAlignment="Left" Height="27" Margin="301,216,0,0" VerticalAlignment="Top" Width="33" Source="/1580919-200.png"/>
         <Image HorizontalAlignment="Left" Height="27" Margin="302,262,0,0" VerticalAlignment="Top" Width="29" Source="/black-key-symbol-icon-6.png"/>
         <Image HorizontalAlignment="Left" Height="118" Margin="169,47,0,0" VerticalAlignment="Top" Width="468" Source="/logo.jpg"/>
+        <Button x:Name="btnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="689,24,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Width="86" Height="37" Foreground="White" BorderBrush="White" Click="btnLogIn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
     </Grid>

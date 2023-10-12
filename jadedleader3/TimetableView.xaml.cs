@@ -117,5 +117,14 @@ namespace jadedleader3
                 }
             }
         }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow therealmainwindow = new MainWindow();
+
+            therealmainwindow.Show();
+
+            this.Close();
+        }
     }
 }
