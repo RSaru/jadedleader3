@@ -147,6 +147,7 @@ namespace jadedleader3
 
             therealmainwindow.Show();
 
-            th
+            this.Close();
+        }
     }
 }
