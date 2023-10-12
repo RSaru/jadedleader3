@@ -1,6 +1,7 @@
 ﻿using jadedleader3.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace jadedleader3.FileManager
         void EditLecture(Lectures objectToBeEdited, Lectures newInfo, string jsonFilePath);
 
         List<Lectures> DeserializingJsonFileLecture(string jsonFilePath);
+
+        List<Lectures> DeserializingJsonFileLectureStudent(string jsonFilePath);
+
+        void AddingLectureToJsonFile(List<Lectures> lectureAdd, string jsonFilePath);
+
 
     }
 }

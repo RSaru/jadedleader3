@@ -37,13 +37,13 @@ namespace jadedleader3
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public List<Lectures> lecturesList;
-
         private string LecturePath = Configuration.ConfigureLectures();
 
-        public void AddLecture(Lectures lecture)
+
+
+        public void AddLecture(Lectures lecture, List<Lectures> lecturesList)
         {
-            foreach (Lectures currentLectures in lecturesList)
+            foreach (Lectures currentLectures in lecturesList.ToList())
             {
                 if (currentLectures.RoomNumber == lecture.RoomNumber && currentLectures.RoomNumber == lecture.RoomNumber && lecture.StartTime >= currentLectures.StartTime && lecture.StartTime <= currentLectures.EndTime)
                 {
@@ -60,6 +60,8 @@ namespace jadedleader3
                     MessageBox.Show("Invalid data input.");
                 }
             }
+
+            _jsonFileHandler.AddingLectureToJsonFile(lecturesList, LecturePath);
 
         }
 

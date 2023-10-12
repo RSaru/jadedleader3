@@ -1,0 +1,36 @@
+﻿<Window x:Class="jadedleader3.Addlecture"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jadedleader3"
+        mc:Ignorable="d"
+        Title="Addlecture" Height="450" Width="800">
+    <Grid Background="#FFCF3D3D">
+        <Label Content="ModuleCode" HorizontalAlignment="Left" Height="35" Margin="161,196,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="EndTime" HorizontalAlignment="Left" Height="35" Margin="414,271,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="StartTime" HorizontalAlignment="Left" Height="35" Margin="414,231,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="DayOfTheWeek" HorizontalAlignment="Left" Height="35" Margin="414,196,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="RoomNumber" HorizontalAlignment="Left" Height="35" Margin="414,151,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="LecturerName" HorizontalAlignment="Left" Height="35" Margin="161,271,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="CourseName" HorizontalAlignment="Left" Height="35" Margin="161,156,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="ModuleName" HorizontalAlignment="Left" Height="35" Margin="161,236,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <TextBox x:Name="txtCourseName" HorizontalAlignment="Left" Height="35" Margin="268,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116" TextChanged="txtCourseName_TextChanged"/>
+        <TextBox x:Name="txtEndTime" HorizontalAlignment="Left" Height="35" Margin="521,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtStartTime" HorizontalAlignment="Left" Height="35" Margin="521,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtDayWeek" HorizontalAlignment="Left" Height="35" Margin="521,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtRoomNum" HorizontalAlignment="Left" Height="35" Margin="521,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtLecName" HorizontalAlignment="Left" Height="35" Margin="268,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtModName" HorizontalAlignment="Left" Height="35" Margin="268,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtModCode" HorizontalAlignment="Left" Height="35" Margin="268,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="btnAdd" Content="Add Lecture" HorizontalAlignment="Left" Height="80" Margin="326,327,0,0" VerticalAlignment="Top" Width="211" Click="btnAdd_Click" Background="#FFCF3D3D" Foreground="White" BorderBrush="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Margin="225,24,150,312" Source="/logo.jpg" Stretch="Fill"/>
+
+    </Grid>
+</Window>

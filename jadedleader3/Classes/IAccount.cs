@@ -15,6 +15,7 @@ namespace jadedleader3.Classes
 
         public string Access { get; set; }  
 
+        public string Modules { get; set; }
 
     }
 }

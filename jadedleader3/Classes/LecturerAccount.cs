@@ -22,6 +22,7 @@ namespace jadedleader3.Classes
         public string Password { get; set; }
 
         public string TimeCreated { get; set; }
+        public string Modules { get; set; }
 
         public LecturerAccount()
         {

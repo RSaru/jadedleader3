@@ -93,6 +93,29 @@ namespace jadedleader3.FileManager
 
         }
 
+        public List<Lectures> DeserializingJsonFileLectureStudent(string jsonFilePath)
+        {
+            try
+            {
+                string jsonFileContents = File.ReadAllText(jsonFilePath);
+
+                List<Lectures>? deserializedLectures = JsonSerializer.Deserialize<List<Lectures>>(jsonFileContents);
+                deserializedLectures = (List<Lectures>)deserializedLectures.Where(jsonObject => jsonObject.ModuleCode.Equals(UserAccount.ModulesTwo)).ToList();
+
+                if (deserializedLectures == null)
+                {
+                    throw new Exception($"File couldn't be deserialized, either the file has no contents or the file path is incorrect.");
+                }
+
+                return deserializedLectures;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"An error occurred while trying to deserialize the JSON file: {ex.Message}");
+            }
+
+        }
+
         public void DeleteFromJSON(string jsonFilePath, Lectures objectToBeDeleted)
         {
 

@@ -4,7 +4,7 @@
     "ModuleCode": "1111",
     "ModuleName": "Software Engineering",
     "LecturerName": "Hueng-Min Son",
-    "RoomNumber": "69420",
+    "RoomNumber": "69426",
     "DayOfTheWeek": "Thursday",
     "StartTime": "2023-09-28T09:00:00",
     "EndTime": "2023-09-28T12:00:00"
@@ -18,5 +18,34 @@
     "DayOfTheWeek": "Wednesday",
     "StartTime": "2023-09-29T09:00:00",
     "EndTime": "2023-09-29T12:00:00"
+  },
+  {
+    "CourseName": "Applied Computer Science",
+    "ModuleCode": "1111",
+    "ModuleName": "Software Engineering",
+    "LecturerName": "Hueng-Min Son",
+    "RoomNumber": "69426",
+    "DayOfTheWeek": "Thursday",
+    "StartTime": "2023-09-28T09:00:00",
+    "EndTime": "2023-09-28T12:00:00"
+  },
+  {
+    "CourseName": "Applied Computer Science",
+    "ModuleCode": "1122",
+    "ModuleName": "Software Engineering",
+    "LecturerName": "Hueng-Min Son",
+    "RoomNumber": "69421",
+    "DayOfTheWeek": "Wednesday",
+    "StartTime": "2023-09-29T09:00:00",
+    "EndTime": "2023-09-29T12:00:00"
+  },
+  {
+    "CourseName": "TextBox",
+    "ModuleCode": "TextBox",
+    "ModuleName": "TextBox",
+    "LecturerName": "TextBox",
+    "RoomNumber": "TextBox",
+    "DayOfTheWeek": "TextBox",
+    "StartTime": "2023-10-12T09:00:00",
+    "EndTime": "2023-10-12T12:00:00"
   }
-]

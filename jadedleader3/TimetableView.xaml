@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Title="TimetableView" Height="900" Width="1700">
     <Window.Resources>
-        <local:DayOfWeekListConverter x:Key="DayOfWeekListConverter" />
         <x:Array x:Key="DayOfWeekList" Type="{x:Type sys:String}">
             <sys:String>Monday</sys:String>
             <sys:String>Tuesday</sys:String>
@@ -18,7 +17,7 @@
         </x:Array>
     </Window.Resources>
     <Grid>
-        <DataGrid Name="timetableDataGrid" IsReadOnly="False" ItemsSource="{Binding LectureSchedule}" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" Margin="10,174,272,174">
+        <DataGrid Name="timetableDataGrid" IsReadOnly="False" ItemsSource="{Binding LectureSchedule}" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" Height="600" Width="1350" Margin="0,76,200,208">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Course Name" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
@@ -143,5 +142,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Image HorizontalAlignment="Left" Height="61" Margin="10,10,0,0" VerticalAlignment="Top" Width="238" Source="/logo.jpg"/>
+        <Button x:Name="btnAdd" Content="Add Lecture" HorizontalAlignment="Left" Height="47" Margin="1461,76,0,0" VerticalAlignment="Top" Width="182" Click="btnAdd_Click" />
     </Grid>
 </Window>

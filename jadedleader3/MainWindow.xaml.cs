@@ -60,7 +60,6 @@ namespace jadedleader3
             string password = txtPassword.Text;
 
             var login =  LecturerLogin.LoggingInUser(username, password);
-
             if(login == "Lecturer")
             {
                 MessageBox.Show("Lecturer pathway");
@@ -70,6 +69,8 @@ namespace jadedleader3
             else if(login == "User")
             {
                 MessageBox.Show("User pathway");
+                TimetableView time = new TimetableView();
+                time.Show();
             }
             else
             {

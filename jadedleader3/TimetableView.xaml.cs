@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using jadedleader3.Classes;
 using jadedleader3.FileManager;
+using jadedleader3.Services;
 
 namespace jadedleader3
 {
@@ -25,6 +27,7 @@ namespace jadedleader3
 
         public ObservableCollection<Lectures>? LectureSchedule { get; set; }
         private ObservableCollection<Lectures>? originalLectureData { get; set; }
+        public ObservableCollection<Lectures>? LectureScheduleStudent { get; set; }
         public TimetableView()
         {
             InitializeComponent();
@@ -35,7 +38,21 @@ namespace jadedleader3
         private void PopulateData()
         {
             DataContext = this;
-            LectureSchedule = new ObservableCollection<Lectures>(_jsonFileHandler.DeserializingJsonFileLecture(path));
+            if (UserAccount.UserLoggedIn == "Lecturer")
+            {
+                LectureSchedule = new ObservableCollection<Lectures>(_jsonFileHandler.DeserializingJsonFileLecture(path));
+            }
+            else
+            {
+                timetableDataGrid.Width = 1200;
+                Thickness margin = timetableDataGrid.Margin;
+                margin.Right = 500;
+                timetableDataGrid.Margin = margin;
+                timetableDataGrid.IsHitTestVisible = false;
+                btnAdd.IsEnabled = false;
+                LectureSchedule = new ObservableCollection<Lectures>(_jsonFileHandler.DeserializingJsonFileLectureStudent(path));
+
+            }
             originalLectureData = new ObservableCollection<Lectures>(LectureSchedule.Select(lecture => new Lectures
             {
                 CourseName = lecture.CourseName,
@@ -116,6 +133,12 @@ namespace jadedleader3
                     timetableDataGrid.Items.Refresh();
                 }
             }
+        }
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Addlecture newLecture = new Addlecture();
+            newLecture.Show();
+            this.Close();
         }
     }
 }

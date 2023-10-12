@@ -11,7 +11,8 @@ namespace jadedleader3.Classes
     public class UserAccount : IAccount
     {
         private readonly IJsonFileHandler<UserAccount> _jsonFileHandler;
-        
+
+        public static string UserLoggedIn;
 
         public Guid Id { get;  set; }    
 
@@ -22,7 +23,9 @@ namespace jadedleader3.Classes
         public string Password { get; set; }   
 
         public string TimeCreated { get; set; }
-
+        public string Modules { get; set; }
+        public static string ModulesTwo { get; set; }
+        
         public UserAccount()
         {
             
@@ -35,7 +38,7 @@ namespace jadedleader3.Classes
             Access = "User";
             Password = password;
             TimeCreated = DateTime.Now.ToShortDateString();
-
+            Modules = "1111";
             _jsonFileHandler = jsonFileHandler;
             
         }

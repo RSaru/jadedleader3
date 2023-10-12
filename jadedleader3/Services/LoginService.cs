@@ -16,7 +16,7 @@ namespace jadedleader3.Services
         public LoginService(IJsonFileHandler<T> jsonFileHandler)
         {
             _jsonFileHandler = jsonFileHandler;
-            
+
         }
 
         private string filepath = Configuration.ConfigureUsers();
@@ -38,7 +38,10 @@ namespace jadedleader3.Services
 
                     if (checkingPassword != null)
                     {
+                        UserAccount.ModulesTwo = filtering.Modules;
+                        UserAccount.UserLoggedIn = filtering.Access;
                         return filtering.Access;
+                       
                     }
                 }
             }
