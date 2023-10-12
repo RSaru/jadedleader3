@@ -40,5 +40,15 @@ namespace jadedleader3
 
             MessageBox.Show("Lecturer Account created");
         }
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow themainwindow = new MainWindow();
+
+            themainwindow.Show();
+
+            this.Close();
+
+        }
     }
 }

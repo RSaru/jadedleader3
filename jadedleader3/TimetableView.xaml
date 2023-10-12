@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="TimetableView" Height="900" Width="1700">
     <Window.Resources>
+        <local:DayOfWeekListConverter x:Key="DayOfWeekListConverter" />
         <x:Array x:Key="DayOfWeekList" Type="{x:Type sys:String}">
             <sys:String>Monday</sys:String>
             <sys:String>Tuesday</sys:String>
@@ -16,8 +17,8 @@
             <sys:String>Friday</sys:String>
         </x:Array>
     </Window.Resources>
-    <Grid>
-        <DataGrid Name="timetableDataGrid" IsReadOnly="False" ItemsSource="{Binding LectureSchedule}" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" Height="600" Width="1350" Margin="0,76,200,208">
+    <Grid Background="#FFCF3D3D">
+        <DataGrid Name="timetableDataGrid" IsReadOnly="False" ItemsSource="{Binding LectureSchedule}" AutoGenerateColumns="False" CanUserSortColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" Margin="129,223,153,125" Background="#FFA93D3D" BorderBrush="#FFCF3D3D">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Course Name" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
@@ -141,7 +142,13 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Image HorizontalAlignment="Left" Height="61" Margin="10,10,0,0" VerticalAlignment="Top" Width="238" Source="/logo.jpg"/>
-        <Button x:Name="btnAdd" Content="Add Lecture" HorizontalAlignment="Left" Height="47" Margin="1461,76,0,0" VerticalAlignment="Top" Width="182" Click="btnAdd_Click" />
+        <Image HorizontalAlignment="Left" Height="195" Margin="532,10,0,0" VerticalAlignment="Top" Width="748" Source="/logo.jpg"/>
+        <Button x:Name="btnLogOut" Content="Log out" HorizontalAlignment="Left" Margin="1487,55,0,0" VerticalAlignment="Top" Height="84" Width="143" Foreground="White" BorderBrush="White" Background="#FFCF3D3D" FontSize="22" Click="btnLogOut_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>

@@ -39,7 +39,7 @@
             </TextBox.Resources>
         </TextBox>
         <Image HorizontalAlignment="Left" Height="118" Margin="169,62,0,0" VerticalAlignment="Top" Width="468" Source="/logo.jpg"/>
-        <Button x:Name="lecturerNavigationBtn" Content="Button" HorizontalAlignment="Left" Margin="644,309,0,0" VerticalAlignment="Top" Click="lecturerNavigationBtn_Click"/>
+        <Button x:Name="lecturerNavigationBtn" Content="Button" HorizontalAlignment="Left" Margin="696,374,0,0" VerticalAlignment="Top" Click="lecturerNavigationBtn_Click"/>
         <Image HorizontalAlignment="Left" Height="27" Margin="301,216,0,0" VerticalAlignment="Top" Width="33" Source="/1580919-200.png"/>
         <Image HorizontalAlignment="Left" Height="27" Margin="302,262,0,0" VerticalAlignment="Top" Width="29" Source="/black-key-symbol-icon-6.png"/>
 
