@@ -140,5 +140,13 @@ namespace jadedleader3
             newLecture.Show();
             this.Close();
         }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow therealmainwindow = new MainWindow();
+
+            therealmainwindow.Show();
+
+            th
     }
 }
