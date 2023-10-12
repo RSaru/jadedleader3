@@ -38,14 +38,5 @@
     "DayOfTheWeek": "Wednesday",
     "StartTime": "2023-09-29T09:00:00",
     "EndTime": "2023-09-29T12:00:00"
-  },
-  {
-    "CourseName": "TextBox",
-    "ModuleCode": "TextBox",
-    "ModuleName": "TextBox",
-    "LecturerName": "TextBox",
-    "RoomNumber": "TextBox",
-    "DayOfTheWeek": "TextBox",
-    "StartTime": "2023-10-12T09:00:00",
-    "EndTime": "2023-10-12T12:00:00"
   }
+]
